@@ -1,0 +1,107 @@
+<! DOCTYPE html>
+  <html lang="en">
+<html>
+<head>
+<meta charset="utf-8">
+<title>O Points</title>
+<meta name="viewport" content="width=2880, initial-scale=1">
+</head>
+<style>
+
+div {
+  animation: rotate-all 2s 0 infinite linear alternate;
+}
+
+.div1 {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  position: relative;
+  margin: auto;
+  animation: square-to-circle 2.5s .5s infinite cubic-bezier(1,.1,.295,1.225) alternate-reverse;
+
+}
+.div2 {
+    width: 80px;
+  height: 80px;
+  background-color: red;
+  position: relative;
+  margin: auto;
+  animation: square-to-circle2 2.5s .42s infinite cubic-bezier(1,.1,.295,1.225) alternate-reverse;
+}
+#one {
+  top: 300px;
+}
+
+#two {
+  top: 410px;
+  right: 200px;
+}
+
+#three {
+  top: 330px;
+  left:200px;
+}
+
+@keyframes square-to-circle {
+  25%  {
+    border-radius:50% 0 0 0;
+    background:orange;
+    transform:rotate(135deg);
+  }
+  50%  {
+    border-radius:50% 50% 0 0;
+    background:#000080;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background:#778899;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:yellow;
+    transform:rotate(404deg);
+  }
+}
+
+@keyframes square-to-circle2 {
+  25%  {
+    border-radius:50% 0 0 0;
+    background:orange;
+    transform:rotate(135deg);
+  }
+  50%  {
+    border-radius:50% 50% 0 0;
+    background:#000080;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background:#778899;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:yellow;
+    transform:rotate(404deg);
+  }
+}
+
+
+
+
+
+
+</style>
+<body>
+  <div class="div1" id="one"> </div>
+    <div class="div1" id="two"></div>
+    <div class="div2" id="three"><a href="first.html" class="circle_link"></a>
+    </div>
+
+
+
+</body>
+</html>
