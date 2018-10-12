@@ -3,32 +3,124 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>A Though</title>
+<title>A Thougt</title>
 <meta name="viewport" content="width=2880, initial-scale=1">
 </head>
 <style>
-div {
-  width: 100px;
-	height: 100px;
+
+/*runningball*/
+.surround {
+  width: 70px;
+	height: 70px;
 	background: red;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-  position: relative;
+  position: fixed;
   animation: surround 4s .6s infinite alternate-reverse;
 }
 
-@-webkit-keyframes surround {
-  0%   {background-color:red; left:100px; top:100px;}
-  25%  {background-color:black; left:800px; top:100px;}
-  50%  {background-color:orange; left:800px; top:800px;}
-  75%  {background-color:blue; left:100px; top:800px;}
-  100% {background-color:black; left:100px; top:100px;}
+@keyframes surround {
+  0%   {background-color:red; left:580px; top:580px;}
+  25%  {background-color:black; left:1010px; top:580px;}
+  50%  {background-color:orange; left:1010px; top:200px;}
+  75%  {background-color:blue; left:580px; top:200px;}
+  100% {background-color:black; left:580px; top:580px;}
+}
+
+/*dot_to ring_*/
+
+#wrap_center_1 {
+	width:80px;
+	height: 80px;
+}
+.wrap_first {
+	position: absolute;
+	left:50%;
+	margin-top: 150px;
+	transform: translate(-50%, -50%);
+}
+.dylm_container {
+	background-color: rgba(255,255,255,1.00);
+	width: 80px;
+  height: 80px;
+	margin-top: 210px;
+	margin-left: -75px;
+	border-radius: 80px;
+	position: absolute;
+}
+#dylm_text {
+  position: relative;
+	margin-top: 66px;
+  z-index: 5;
+}
+.circle {
+	width: 100px;
+	height: 100px;
+	margin-top: 210px;
+	margin-left: -76px;
+	border-radius: 150px;
+	position: absolute;
+	/*
+	animation-name: circles;
+	animation-duration: 5s;
+	animation-play-state: running;*/
+
+	/*transition*/
+	transition-timing-function: ease-in-out;
+	transition: width 3s, height 3s, margin-top 3s, margin-left 3s, background-color 2s;
+}
+.circle1 {
+	z-index: -2;
+	background-color: white;
+}
+.circle2 {
+	z-index: -1;
+	background-color: black;
+}
+/*hover wrap circle to trigger transtion of the circle beneath it*/
+.dylm_container:hover ~ .circle2 {
+	width: 200px;
+	height: 200px;
+  margin-top: 210px;
+  margin-left: -75px;
+	background-color: white;
+	animation-play-state: paused;
+}
+@keyframes circles {
+	from {width:100px; height:100px; margin-top: 210px; margin-left: -76px;}
+	to {width:300px; height:300px; margin-top: 210px; margin-left: -76px;}
+}
+
+/*click for gallery*/
+.dylm_text{
+	color: white;
+	font-family: sans-serif;
+	transition-timing-function: ease-in-out;
+	transition: color 2s;
+	font-size: large;
+	text-decoration: none;
+}
+.dylm_text:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.dylm_text:hover {
+
 }
 </style>
 </head>
 <body>
-<div></div>
+  <div class="surround"></div>
+  <body bgcolor="#FFFFFF">
+  	<div class="wrap_center" id="wrap_center_1">
+  		<div class="wrap_first">
+  			<div class="dylm_container">
+        	<div id="dylm_text"><button><a href="everything.html" class="dylm_link">REVEAL</a></button></div>
+  			</div>
+  			<div class="circle circle1"></div>
+  			<div class="circle circle2"></div>
+  		</div>
 
 </body>
 </html>
